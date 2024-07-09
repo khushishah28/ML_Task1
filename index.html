@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flower Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Flower Prediction</h1>
+    <form action="/predict" method="POST">
+        Sepal Length: <input type="text" name="SepalLengthCm" /><br />
+        Sepal Width: <input type="text" name="SepalWidthCm" /><br />
+        Petal Length: <input type="text" name="PetalLengthCm" /><br />
+        Petal Width: <input type="text" name="PetalWidthCm" /><br />
+        <input type="submit" value="Predict" />
+    </form>
+    {% if result %}
+        <p>Predicted Class: {{ result }}</p>
+    {% endif %}
+</body>
+</html>
+
